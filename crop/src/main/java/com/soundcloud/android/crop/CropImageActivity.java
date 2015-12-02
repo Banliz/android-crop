@@ -55,6 +55,8 @@ public class CropImageActivity extends MonitoredActivity {
     // Output image
     private int maxX;
     private int maxY;
+    private int minX;
+    private int minY;
     private int exifRotation;
 
     private Uri sourceUri;
@@ -125,6 +127,9 @@ public class CropImageActivity extends MonitoredActivity {
             aspectY = extras.getInt(Crop.Extra.ASPECT_Y);
             maxX = extras.getInt(Crop.Extra.MAX_X);
             maxY = extras.getInt(Crop.Extra.MAX_Y);
+            minX = extras.getInt(Crop.Extra.MIN_X);
+            minY = extras.getInt(Crop.Extra.MIN_Y);
+
             saveUri = extras.getParcelable(MediaStore.EXTRA_OUTPUT);
         }
 
@@ -138,6 +143,8 @@ public class CropImageActivity extends MonitoredActivity {
                 is = getContentResolver().openInputStream(sourceUri);
                 BitmapFactory.Options option = new BitmapFactory.Options();
                 option.inSampleSize = sampleSize;
+                minX = minX / sampleSize;
+                minY = minY / sampleSize;
                 rotateBitmap = new RotateBitmap(BitmapFactory.decodeStream(is, null, option), exifRotation);
             } catch (IOException e) {
                 Log.e("Error reading image: " + e.getMessage(), e);
@@ -256,6 +263,7 @@ public class CropImageActivity extends MonitoredActivity {
                     if (imageView.highlightViews.size() == 1) {
                         cropView = imageView.highlightViews.get(0);
                         cropView.setFocus(true);
+                        cropView.setMin(minX, minY);
                     }
                 }
             });
