@@ -28,6 +28,8 @@ public class Crop {
         String MIN_X = "min_x";
         String MIN_Y = "min_y";
         String ERROR = "error";
+        String SAVE_W = "save_w";
+        String SAVE_H = "save_h";
 
     }
 
@@ -85,6 +87,12 @@ public class Crop {
     public Crop withMinSize(int width, int height) {
         cropIntent.putExtra(Extra.MIN_X, width);
         cropIntent.putExtra(Extra.MIN_Y, height);
+        return this;
+    }
+
+    public Crop withSaveSize(int width, int height) {
+        cropIntent.putExtra(Extra.SAVE_W, width);
+        cropIntent.putExtra(Extra.SAVE_H, height);
         return this;
     }
 
