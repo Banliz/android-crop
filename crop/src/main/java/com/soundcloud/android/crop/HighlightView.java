@@ -28,8 +28,8 @@ import android.graphics.Rect;
 import android.graphics.RectF;
 import android.graphics.Region;
 import android.os.Build;
-import android.util.*;
 import android.util.Log;
+import android.util.TypedValue;
 import android.view.View;
 
 /*

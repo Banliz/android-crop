@@ -6,5 +6,6 @@
 
     <string name="crop__done">DONE</string>
     <string name="crop__cancel" tools:ignore="ButtonCase">CANCEL</string>
+    <string name="image_format_error">Image format is error</string>
 
 </resources>

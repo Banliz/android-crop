@@ -369,7 +369,8 @@ public class CropImageActivity extends MonitoredActivity {
 
         } catch (IOException e) {
             Log.e("Error cropping image: " + e.getMessage(), e);
-            setResultException(e);
+
+            setResultException(new Exception(getResources().getString(R.string.image_format_error)));
         } catch (OutOfMemoryError e) {
             Log.e("OOM cropping image: " + e.getMessage(), e);
             setResultException(e);
@@ -391,7 +392,7 @@ public class CropImageActivity extends MonitoredActivity {
         if (saveH > 0 && saveW > 0) {
             croppedImage = BitmapUtil.getMatrixBitmap(croppedImage,
                     saveH, saveW, false);
-            
+
         }
         if (saveUri != null) {
             OutputStream outputStream = null;
