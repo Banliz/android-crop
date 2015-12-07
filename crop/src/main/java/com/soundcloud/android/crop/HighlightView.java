@@ -372,8 +372,10 @@ class HighlightView {
         }
         android.util.Log.d("crop", "," + r.height());
         Log.d("cropimage", "h:" + r.height() + ",w" + r.width() + "," + minY + "," + minX);
-        if (r.height() <= minY || r.width() <= minX) {
-            return;
+        if (dx < 0 || dy <= 0) {
+            if (r.height() <= minY || r.width() <= minX) {
+                return;
+            }
         }
 
         cropRect.set(r);
