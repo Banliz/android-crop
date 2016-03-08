@@ -1,7 +1,8 @@
 # Built application files
 *.apk
 *.ap_
-
+**/.svn
+**/*.svn
 # Files for the Dalvik VM
 *.dex
 
@@ -31,3 +32,5 @@ gradlew
 .idea
 gradle
 gradle.properties
+crop/src/androidTest/.svn
+crop/src/main/java/com/soundcloud/.svn
