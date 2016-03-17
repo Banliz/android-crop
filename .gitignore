@@ -31,6 +31,6 @@ gradlew
 *.bat
 .idea
 gradle
-gradle.properties
+#gradle.properties
 crop/src/androidTest/.svn
 crop/src/main/java/com/soundcloud/.svn
