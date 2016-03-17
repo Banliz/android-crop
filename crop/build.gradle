@@ -16,6 +16,9 @@ android {
         testApplicationId 'com.soundcloud.android.crop.test'
         testInstrumentationRunner 'android.test.InstrumentationTestRunner'
     }
+    lintOptions{
+        abortOnError false
+    }
 }
 
 dependencies {
