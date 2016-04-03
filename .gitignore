@@ -34,3 +34,4 @@ gradle
 #gradle.properties
 crop/src/androidTest/.svn
 crop/src/main/java/com/soundcloud/.svn
+result_files
